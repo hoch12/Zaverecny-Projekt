@@ -10,7 +10,7 @@ public class Roulette extends Game{
 
 
     /**
-     * Implementation of the Roulette game
+     * Starts the Roulette game
      * Allows the user to place bets and calculates the outcome of the game
      * @param user
      * @param scanner
@@ -34,9 +34,7 @@ public class Roulette extends Game{
          */
         int betAmount = getBetAmount(user, scanner);
 
-        /**
-         * Generate a random number between 0 and 36
-         */
+        // Generate a random number between 0 and 36
         Random random = new Random();
         int result = random.nextInt(37);
 
@@ -46,9 +44,7 @@ public class Roulette extends Game{
                 System.out.println("        2. Black");
                 System.out.println();
 
-                /**
-                 * Get the color choice from the user
-                 */
+                // Get the color choice from the user
                 int color = getBetType(scanner);
                 // Check if the user wins based on the color bet
                 if ((color == 1 && result % 2 == 1) || (color == 2 && result % 2 == 0)) {
@@ -66,9 +62,7 @@ public class Roulette extends Game{
                 }
             }
 
-            /**
-             * Implementation of the Odd/Even bet
-             */
+            // Implementation of the Odd/Even bet
             case 2 -> {
                 System.out.println("Choose: 1. Odd");
                 System.out.println("        2. Even");
@@ -91,9 +85,7 @@ public class Roulette extends Game{
                 }
             }
 
-            /**
-             * Implementation of the single number bet
-             */
+            // Implementation of the single number bet
             case 3 -> {
                 System.out.println("Choose a number (0-36): ");
                 // Get the number choice from the user

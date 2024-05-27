@@ -30,7 +30,7 @@ public class Casino {
 
 
     /**
-     * Starts the casino application
+     * Starts the casino game
      * Displays a menu for the user to choose a game to play or to check their balance
      * The loop continues until the user wins, goes bankrupt, or chooses to exit
      */
@@ -88,9 +88,7 @@ public class Casino {
                 choice = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a number between 1 and 5.");
-                /**
-                 * Clear invalid input
-                 */
+                // Clear invalid input
                 scanner.next();
             }
         }
