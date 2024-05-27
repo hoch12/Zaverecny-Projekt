@@ -24,9 +24,12 @@ public class BlackJack extends Game{
         int betAmount = getBetAmount(user, scanner);
 
         /**
-         *  Array for initialization of hands for player and dealer
+         * Array for initialization of hands for player
          */
         List<Integer> playerHand = new ArrayList<>();
+        /**
+         * Array for initialazation of hands for dealer
+         */
         List<Integer> dealerHand = new ArrayList<>();
 
         Random random = new Random();
