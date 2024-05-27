@@ -57,16 +57,12 @@ public class BlackJack extends Game{
             System.out.println();
             int choice = getBetType(scanner);
 
-            /**
-             *  If player chooses to hit, adds a card to players hand
-             */
+            //  If player chooses to hit, adds a card to players hand
             if (choice == 1) {
                 playerHand.add(random.nextInt(11) + 1);
                 System.out.println("Your hand: " + playerHand);
 
-                /**
-                 *  Check if player has busted
-                 */
+                //  Check if player has busted
                 if (calculateHandValue(playerHand) > 21) {
                     playerBusted = true;
                     break;
@@ -76,23 +72,17 @@ public class BlackJack extends Game{
             }
         }
 
-        /**
-         *  Dealers turn to draw cards until hand value is at least 17
-         */
+        //  Dealers turn to draw cards until hand value is at least 17
         while (calculateHandValue(dealerHand) < 17) {
             dealerHand.add(random.nextInt(11) + 1);
         }
 
-        /**
-         *  Check if dealer has busted
-         */
+        //  Check if dealer has busted
         if (calculateHandValue(dealerHand) > 21) {
             dealerBusted = true;
         }
 
-        /**
-         *  Determining the outcome of the played game
-         */
+        //  Determining the outcome of the played game
         if (playerBusted) {
             user.adjustBalance(-betAmount);
             System.out.println();
@@ -110,9 +100,7 @@ public class BlackJack extends Game{
             System.out.println();
         }
 
-        /**
-         *  Shows final hands of user and dealer
-         */
+        //  Shows final hands of user and dealer
         System.out.println("Your final hand: " + playerHand);
         System.out.println("Dealer's final hand: " + dealerHand);
     }
@@ -136,9 +124,7 @@ public class BlackJack extends Game{
             }
         }
 
-        /**
-         *  Adjust value if there are aces and the total value exceeds 21
-         */
+        //  Adjust value if there are aces and the total value exceeds 21
         while (value > 21 && aceCount > 0) {
             value -= 10;
             aceCount--;
@@ -154,9 +140,7 @@ public class BlackJack extends Game{
     private int getBetType(Scanner scanner) {
         int choice = -1;
 
-        /**
-         *  Ensure valid input from the user
-         */
+        //  Ensure valid input from the user
         while (choice < 1 || choice > 2) {
             try {
                 choice = scanner.nextInt();
@@ -176,9 +160,7 @@ public class BlackJack extends Game{
     private int getBetAmount(User user, Scanner scanner) {
         int betAmount = 0;
 
-        /**
-         *  Ensure the bet amount is valid and within the users balance
-         */
+        //  Ensure the bet amount is valid and within the users balance
         while (true) {
             try {
                 System.out.println("Enter your bet amount: ");
@@ -190,9 +172,7 @@ public class BlackJack extends Game{
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a valid amount.");
-                /**
-                 * Clear invalid input
-                 */
+                // Clear invalid input
                 scanner.next();
             }
         }

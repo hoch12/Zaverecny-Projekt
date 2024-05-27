@@ -43,26 +43,18 @@ public class Casino {
             System.out.println("                       5. Exit");
             System.out.println();
 
-            /**
-             * Get the users choice from the menu
-             */
+            // Get the users choice from the menu
             int choice = getUserChoice();
 
             if (choice == 5) {
-                /**
-                 * If user chooses to exit
-                 */
+                // If user chooses to exit
                 System.out.println("Thank you for playing in our Casino.");
                 break;
             } else if (choice == 4) {
-                /**
-                 * If user chooses to check their balance
-                 */
+                // If user chooses to check their balance
                 System.out.println("Your current balance is $" + user.getBalance());
             } else {
-                /**
-                 * If user chooses a game to play
-                 */
+                // If user chooses a game to play
                 Game game = GameFactory.createGame(choice);
                 if (game != null) {
                     game.play(user, scanner);
@@ -72,9 +64,7 @@ public class Casino {
             }
         }
 
-        /**
-         * Check if the user has won or gone bankrupt and give him a message about it
-         */
+        // Check if the user has won or gone bankrupt and give him a message about it
         if (user.getBalance() >= WINNING_BALANCE) {
             System.out.println("CONGRATULATIONS! You won $100,000!");
         } else if (user.getBalance() <= BANKRUPT_BALANCE) {

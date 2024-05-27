@@ -10,14 +10,11 @@ public class CasinoTest {
         User user = new User(1000);
         BlackJack blackjack = new BlackJack();
 
-        /**
-         *  Mock Scanner input for a simple game scenario
-         */
+        //  Mock Scanner input for a simple game scenario
         Scanner scanner = new Scanner("500\n2\n");
         blackjack.play(user, scanner);
-        /**
-         * Since we cannot control the random outcome, we check if the balance is either unchanged or increased
-          */
+        // Since we cannot control the random outcome, we check if the balance is either unchanged or increased
+
         assertTrue(user.getBalance() >= 500 && user.getBalance() <= 1500);
     }
 
@@ -26,15 +23,13 @@ public class CasinoTest {
         User user = new User(1000);
         BlackJack blackjack = new BlackJack();
 
-        /**
-         * Mock users Scanner input for a simple game scenario
-          */
+        // Mock users Scanner input for a simple game scenario
+
         Scanner scanner = new Scanner("500\n1\n1\n1\n1\n1\n1\n");
         blackjack.play(user, scanner);
 
-        /**
-         * Since we cannot control the random outcome, we check if the balance is either unchanged or decreased
-         */
+         // Since we cannot control the random outcome, we check if the balance is either unchanged or decreased
+
         assertTrue(user.getBalance() >= 0 && user.getBalance() <= 1000);
     }
 
@@ -43,15 +38,13 @@ public class CasinoTest {
         User user = new User(1000);
         HorseRacing horseRacing = new HorseRacing();
 
-        /**
-         * Mock Scanner input for choosing a horse and betting
-         */
+        // Mock Scanner input for choosing a horse and betting
+
         Scanner scanner = new Scanner("1\n500\n");
         horseRacing.play(user, scanner);
 
-        /**
-         * Since we cannot control the random outcome, we check if the balance is either unchanged or increased
-         */
+        // Since we cannot control the random outcome, we check if the balance is either unchanged or increased
+
         assertTrue(user.getBalance() >= 500 && user.getBalance() <= 3500);
 
     }

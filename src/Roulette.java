@@ -46,21 +46,15 @@ public class Roulette extends Game{
                  * Get the color choice from the user
                  */
                 int color = getBetType(scanner);
-                /**
-                 * Check if the user wins based on the color bet
-                 */
+                // Check if the user wins based on the color bet
                 if ((color == 1 && result % 2 == 1) || (color == 2 && result % 2 == 0)) {
-                    /**
-                     * Adjust balance if the user wins
-                     */
+                    // Adjust balance if the user wins
                     user.adjustBalance(betAmount);
                     System.out.println();
                     System.out.println("YOU WIN!");
                     System.out.println();
                 } else {
-                    /**
-                     * Adjust balance if the user loses
-                     */
+                    // Adjust balance if the user loses
                     user.adjustBalance(-betAmount);
                     System.out.println();
                     System.out.println("YOU LOST!");
@@ -75,25 +69,17 @@ public class Roulette extends Game{
                 System.out.println("Choose: 1. Odd");
                 System.out.println("        2. Even");
                 System.out.println();
-                /**
-                 * Get the parity choice from the user
-                 */
+                // Get the parity choice from the user
                 int parity = getBetType(scanner);
-                /**
-                 * Check if the user wins based on the parity bet
-                 */
+                // Check if the user wins based on the parity bet
                 if ((parity == 1 && result % 2 == 1) || (parity == 2 && result % 2 == 0)) {
-                    /**
-                     * Adjust balance if the user wins
-                     */
+                    // Adjust balance if the user wins
                     user.adjustBalance(betAmount);
                     System.out.println();
                     System.out.println("YOU WIN!");
                     System.out.println();
                 } else {
-                    /**
-                     * Adjust balance if the user loses
-                     */
+                    // Adjust balance if the user loses
                     user.adjustBalance(-betAmount);
                     System.out.println();
                     System.out.println("YOU LOST!");
@@ -106,25 +92,17 @@ public class Roulette extends Game{
              */
             case 3 -> {
                 System.out.println("Choose a number (0-36): ");
-                /**
-                 * Get the number choice from the user
-                 */
+                // Get the number choice from the user
                 int number = getBetType(scanner);
-                /**
-                 * Check if the user wins based on the number bet
-                 */
+                // Check if the user wins based on the number bet
                 if (number == result) {
-                    /**
-                     * Adjust balance if the user wins (payout is 35 times the won bet)
-                     */
+                    // Adjust balance if the user wins (payout is 35 times the won bet)
                     user.adjustBalance(betAmount * 35);
                     System.out.println();
                     System.out.println("YOU WIN!");
                     System.out.println();
                 } else {
-                    /**
-                     * Adjust balance if the user loses
-                     */
+                    // Adjust balance if the user loses
                     user.adjustBalance(-betAmount);
                     System.out.println();
                     System.out.println("YOU LOST!");
@@ -142,20 +120,14 @@ public class Roulette extends Game{
      */
     private int getBetType(Scanner scanner) {
         int betType = -1;
-        /**
-         * Ensure bet type is valid
-         */
+        // Ensure bet type is valid
         while (betType < 1 || betType > 36) {
             try {
                 betType = scanner.nextInt();
-                /**
-                 * Exception for invalid input
-                 */
+                // Exception for invalid input
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a valid option.");
-                /**
-                 * Clear invalid input
-                 */
+                // Clear invalid input
                 scanner.next();
             }
         }
@@ -175,22 +147,16 @@ public class Roulette extends Game{
             try {
                 System.out.println("Enter your bet amount: ");
                 betAmount = scanner.nextInt();
-                /**
-                 * Check if user has sufficient funds
-                 */
+                // Check if user has sufficient funds
                 if (betAmount > user.getBalance()) {
                     System.out.println("Insufficient funds. Try again.");
                 } else {
                     break;
                 }
-                /**
-                 * Exception for invalid input
-                 */
+                // Exception for invalid input
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a valid amount.");
-                /**
-                 * Clear invalid input
-                 */
+                // Clear invalid input
                 scanner.next();
             }
         }
