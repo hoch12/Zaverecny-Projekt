@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Abstract class for implementation of the games to be extended with
+ */
 public abstract class Game {
 
     /**

@@ -2,6 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * This class has the implementation of the Horse Racing game
+ * It is extended from the abstract class Game
+ * It allows the user to choose a horse and place a bet and then randomly chooses the winning horse
+ */
 public class HorseRacing extends Game {
 
 

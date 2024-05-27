@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * This class is used for the unit testing of the user
+ */
 public class UserTest {
 
     /**

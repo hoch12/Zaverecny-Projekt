@@ -1,3 +1,6 @@
+/**
+ * This class represents the user in the casino
+ */
 public class User {
 
     /**

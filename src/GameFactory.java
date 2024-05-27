@@ -1,3 +1,6 @@
+/**
+ * This class creates instances for the different games the user can play
+ */
 public class GameFactory {
 
     /**

@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * This class is used for the implementation of the game Blackjack for the user to play
+ * It extends from the abstract class Game and haves the same rules just like in the normal casino
+ */
 public class BlackJack extends Game{
 
 

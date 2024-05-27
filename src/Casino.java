@@ -1,6 +1,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * This class works with the users balance and gives him a menu for the games to play
+ */
 public class Casino {
 
 

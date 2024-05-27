@@ -2,6 +2,10 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * This class is used for the implementation of the game Roulette for the user to play
+ * It extends from the abstract class Game and haves the rules of the normal game roulette
+ */
 public class Roulette extends Game{
 
 
