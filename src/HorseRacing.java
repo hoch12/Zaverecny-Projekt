@@ -13,34 +13,51 @@ public class HorseRacing extends Game {
         System.out.println("Choose a horse (1-5): ");
         System.out.println();
 
-        // Get the users chosen horse number (1-5)
+        /**
+         * Get the users chosen horse number (1-5)
+         */
         int chosenHorse = getBetType(scanner, 5);
 
-        // Get the bet amount from the user
+        /**
+         * Get the bet amount from the user
+         */
         int betAmount = getBetAmount(user, scanner);
 
         Random random = new Random();
 
-        // Randomly determine the winning horse (1-5)
+        /**
+         * Randomly determine the winning horse (1-5)
+         */
         int winningHorse = random.nextInt(5) + 1;
 
-        // Check if the users chosen horse is the winning horse
+        /**
+         * Check if the users chosen horse is the winning horse
+         */
         if (chosenHorse == winningHorse) {
-            // User wins, multiply bet amount by 5 and adjust users balance
+            /**
+             * User wins, multiply bet amount by 5 and adjust users balance
+             */
             user.adjustBalance(betAmount * 5);
             System.out.println();
             System.out.println("YOUR HORSE WON!");
             System.out.println();
         } else {
-            // User loses, subtracts bet amount from users balance
+            /**
+             * User loses, subtracts bet amount from users balance
+             */
             user.adjustBalance(-betAmount);
             System.out.println("YOUR HORSE LOST! Winning horse was: " + winningHorse);
         }
     }
 
 
-     // Gets the users choice for a bet type
-     // Ensures the choice is within the valid range (1 to maxChoice)
+    /**
+     * Gets the users choice for a bet type
+     * Ensures the choice is within the valid range (1 to maxChoice)
+     * @param scanner
+     * @param maxChoice
+     * @return
+     */
 
     private int getBetType(Scanner scanner, int maxChoice) {
         int choice = -1;
@@ -56,8 +73,13 @@ public class HorseRacing extends Game {
     }
 
 
-     // Gets the bet amount from the user
-     // Ensures the bet amount is a valid number and does not exceed the users balance
+    /**
+     * Gets the bet amount from the user
+     * Ensures the bet amount is a valid number and does not exceed the users balance
+     * @param user
+     * @param scanner
+     * @return
+     */
     private int getBetAmount(User user, Scanner scanner) {
         int betAmount = 0;
         while (true) {
@@ -71,7 +93,10 @@ public class HorseRacing extends Game {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a valid amount.");
-                scanner.next(); // Clear invalid input
+                /**
+                 * Clear invalid input
+                 */
+                scanner.next();
             }
         }
         return betAmount;

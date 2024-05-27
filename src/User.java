@@ -1,6 +1,8 @@
 public class User {
 
-    // The balance of the user
+    /**
+     * The balance of the user
+     */
     private int balance;
 
 
@@ -12,8 +14,11 @@ public class User {
         return balance;
     }
 
-    //Adjusts the user's balance by a specified amount
-    //Positive amounts increase the balance, negative amounts decrease it
+    /**
+     * Adjusts the users balance by a specified amount
+     * Winning the bet increase the balance, losing the bet decreases it
+     * @param amount
+     */
     public void adjustBalance(int amount) {
         balance += amount;
     }
