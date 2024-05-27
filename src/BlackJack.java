@@ -8,7 +8,7 @@ public class BlackJack extends Game{
 
 
     /**
-     * Starts the game
+     * Starts the blackjack game
      * @param user
      * @param scanner
      */
@@ -24,37 +24,29 @@ public class BlackJack extends Game{
         int betAmount = getBetAmount(user, scanner);
 
         /**
-         *  Initialize hands for player and dealer
+         *  Array for initialization of hands for player and dealer
          */
         List<Integer> playerHand = new ArrayList<>();
         List<Integer> dealerHand = new ArrayList<>();
 
         Random random = new Random();
 
-        /**
-         *  Add two random cards to players hand
-         */
+        //  Add two random cards to players hand
         playerHand.add(random.nextInt(11) + 1);
         playerHand.add(random.nextInt(11) + 1);
 
-        /**
-         *  Add two random cards to dealers hand
-         */
+        //  Add two random cards to dealers hand
         dealerHand.add(random.nextInt(11) + 1);
         dealerHand.add(random.nextInt(11) + 1);
 
         boolean playerBusted = false;
         boolean dealerBusted = false;
 
-        /**
-         *  Shows the cards in hands
-         */
+        //  Shows the cards in hands
         System.out.println("Your hand: " + playerHand);
         System.out.println("Dealer's visible card: " + dealerHand.get(0));
 
-        /**
-         *  Players gets to choose to hit or stand
-         */
+        //  Players gets to choose to hit or stand
         while (true) {
             System.out.println("Choose: 1. Hit");
             System.out.println("        2. Stand");
@@ -144,13 +136,14 @@ public class BlackJack extends Game{
     private int getBetType(Scanner scanner) {
         int choice = -1;
 
-        //  Ensure valid input from the user
+        //  Check if its a valid input from the user
         while (choice < 1 || choice > 2) {
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a valid option.");
-                scanner.next(); // Clear invalid input
+                // Clear invalid input
+                scanner.next();
             }
         }
 

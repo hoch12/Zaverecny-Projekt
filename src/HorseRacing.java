@@ -10,6 +10,11 @@ import java.util.Scanner;
 public class HorseRacing extends Game {
 
 
+    /**
+     * Starts the Horse Racing game
+     * @param user
+     * @param scanner
+     */
     @Override
     public void play(User user, Scanner scanner) {
         System.out.println();
@@ -35,21 +40,15 @@ public class HorseRacing extends Game {
          */
         int winningHorse = random.nextInt(5) + 1;
 
-        /**
-         * Check if the users chosen horse is the winning horse
-         */
+        // Check if the users chosen horse is the winning horse
         if (chosenHorse == winningHorse) {
-            /**
-             * User wins, multiply bet amount by 5 and adjust users balance
-             */
+            // User wins, multiply bet amount by 5 and adjust users balance
             user.adjustBalance(betAmount * 5);
             System.out.println();
             System.out.println("YOUR HORSE WON!");
             System.out.println();
         } else {
-            /**
-             * User loses, subtracts bet amount from users balance
-             */
+            // User loses, subtracts bet amount from users balance
             user.adjustBalance(-betAmount);
             System.out.println("YOUR HORSE LOST! Winning horse was: " + winningHorse);
         }
@@ -71,7 +70,8 @@ public class HorseRacing extends Game {
                 choice = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a valid option.");
-                scanner.next(); // Clear invalid input
+                // Clear invalid input
+                scanner.next();
             }
         }
         return choice;
@@ -98,9 +98,7 @@ public class HorseRacing extends Game {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a valid amount.");
-                /**
-                 * Clear invalid input
-                 */
+                // Clear invalid input
                 scanner.next();
             }
         }
