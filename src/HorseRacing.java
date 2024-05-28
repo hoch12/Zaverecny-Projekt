@@ -62,7 +62,6 @@ public class HorseRacing extends Game {
      * @param maxChoice
      * @return
      */
-
     private int getBetType(Scanner scanner, int maxChoice) {
         int choice = -1;
         while (choice < 1 || choice > maxChoice) {

@@ -8,10 +8,16 @@ public class Casino {
 
 
     /**
-     * The users money for starting, winning, and bankrupt balances
+     * The users money for starting balance
      */
     private static final int STARTING_BALANCE = 1000;
+    /**
+     * The users money for winning balance
+     */
     private static final int WINNING_BALANCE = 100000;
+    /**
+     * The users money for bankrupt balance
+     */
     private static final int BANKRUPT_BALANCE = 0;
 
     private User user;
@@ -22,7 +28,6 @@ public class Casino {
      * Constructor for the Casino class
      * Initializes the user with a starting balance and sets up the scanner for input
      */
-
     public Casino() {
         this.user = new User(STARTING_BALANCE);
         this.scanner = new Scanner(System.in);
@@ -34,7 +39,6 @@ public class Casino {
      * Displays a menu for the user to choose a game to play or to check their balance
      * The loop continues until the user wins, goes bankrupt, or chooses to exit
      */
-
     public void start() {
         System.out.println("-----------------------WELCOME TO THE CASINO!-----------------------");
         System.out.println();
