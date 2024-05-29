@@ -25,13 +25,9 @@ public class Roulette extends Game{
         System.out.println("                3. Single number");
         System.out.println();
 
-        /**
-         * Get the type of bet from the user
-         */
+        // Get the type of bet from the user
         int betType = getBetType(scanner);
-        /**
-         * Get the bet amount from the user
-         */
+        // Get the bet amount from the user
         int betAmount = getBetAmount(user, scanner);
 
         // Generate a random number between 0 and 36

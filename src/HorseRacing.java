@@ -23,21 +23,15 @@ public class HorseRacing extends Game {
         System.out.println("Choose a horse (1-5): ");
         System.out.println();
 
-        /**
-         * Get the users chosen horse number (1-5)
-         */
+        // Get the users chosen horse number (1-5)
         int chosenHorse = getBetType(scanner, 5);
 
-        /**
-         * Get the bet amount from the user
-         */
+        // Get the bet amount from the user
         int betAmount = getBetAmount(user, scanner);
 
         Random random = new Random();
 
-        /**
-         * Randomly determine the winning horse (1-5)
-         */
+        // Randomly determine the winning horse (1-5)
         int winningHorse = random.nextInt(5) + 1;
 
         // Check if the users chosen horse is the winning horse

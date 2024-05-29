@@ -18,18 +18,12 @@ public class BlackJack extends Game{
         System.out.println("WELCOME to BlackJack!");
         System.out.println();
 
-        /**
-         *  Get the bet amount from the user
-         */
+        // Get the bet amount from the user
         int betAmount = getBetAmount(user, scanner);
 
-        /**
-         * Array for initialization of hands for player
-         */
+        // Array for initialization of hands for player
         List<Integer> playerHand = new ArrayList<>();
-        /**
-         * Array for initialazation of hands for dealer
-         */
+        // Array for initialazation of hands for dealer
         List<Integer> dealerHand = new ArrayList<>();
 
         Random random = new Random();
