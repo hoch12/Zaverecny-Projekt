@@ -55,11 +55,13 @@ public class Casino {
 
             if (choice == 5) {
                 // If user chooses to exit
-                System.out.println("Thank you for playing in our Casino.");
+                System.out.println("-----------------------THANK YOU FOR PLAYING IN OUR CASINO-----------------------");
                 break;
             } else if (choice == 4) {
                 // If user chooses to check their balance
+                System.out.println();
                 System.out.println("Your current balance is $" + user.getBalance());
+                System.out.println();
             } else {
                 // If user chooses a game to play
                 Game game = GameFactory.createGame(choice);
