@@ -18,7 +18,7 @@ public class Roulette extends Game{
     @Override
     public void play(User user, Scanner scanner) {
         System.out.println();
-        System.out.println("WELCOME to Roulette!");
+        System.out.println("------WELCOME to Roulette!------");
         System.out.println();
         System.out.println("Place your bet: 1. Red/Black");
         System.out.println("                2. Odd/Even");
@@ -47,13 +47,13 @@ public class Roulette extends Game{
                     // Adjust balance if the user wins
                     user.adjustBalance(betAmount);
                     System.out.println();
-                    System.out.println("YOU WIN!");
+                    System.out.println("------YOU WIN!------");
                     System.out.println();
                 } else {
                     // Adjust balance if the user loses
                     user.adjustBalance(-betAmount);
                     System.out.println();
-                    System.out.println("YOU LOST!");
+                    System.out.println("------YOU LOST!------");
                     System.out.println();
                 }
             }
@@ -70,13 +70,13 @@ public class Roulette extends Game{
                     // Adjust balance if the user wins
                     user.adjustBalance(betAmount);
                     System.out.println();
-                    System.out.println("YOU WIN!");
+                    System.out.println("------YOU WIN!------");
                     System.out.println();
                 } else {
                     // Adjust balance if the user loses
                     user.adjustBalance(-betAmount);
                     System.out.println();
-                    System.out.println("YOU LOST!");
+                    System.out.println("------YOU LOST!------");
                     System.out.println();
                 }
             }
@@ -91,13 +91,13 @@ public class Roulette extends Game{
                     // Adjust balance if the user wins (payout is 35 times the won bet)
                     user.adjustBalance(betAmount * 35);
                     System.out.println();
-                    System.out.println("YOU WIN!");
+                    System.out.println("------YOU WIN!------");
                     System.out.println();
                 } else {
                     // Adjust balance if the user loses
                     user.adjustBalance(-betAmount);
                     System.out.println();
-                    System.out.println("YOU LOST!");
+                    System.out.println("------YOU LOST!------");
                     System.out.println();
                 }
             }

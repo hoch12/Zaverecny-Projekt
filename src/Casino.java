@@ -40,7 +40,9 @@ public class Casino {
      * The loop continues until the user wins, goes bankrupt, or chooses to exit
      */
     public void start() {
+        System.out.println("--------------------------------------------------------------------");
         System.out.println("-----------------------WELCOME TO THE CASINO!-----------------------");
+        System.out.println("--------------------------------------------------------------------");
         System.out.println();
         while (user.getBalance() < WINNING_BALANCE && user.getBalance() > BANKRUPT_BALANCE) {
             System.out.println("Choose a game to play: 1. Roulette");

@@ -15,7 +15,7 @@ public class BlackJack extends Game{
     @Override
     public void play(User user, Scanner scanner) {
         System.out.println();
-        System.out.println("WELCOME to BlackJack!");
+        System.out.println("------WELCOME to BlackJack!------");
         System.out.println();
 
         // Get the bet amount from the user
@@ -40,8 +40,10 @@ public class BlackJack extends Game{
         boolean dealerBusted = false;
 
         //  Shows the cards in hands
+        System.out.println();
         System.out.println("Your hand: " + playerHand);
         System.out.println("Dealer's visible card: " + dealerHand.get(0));
+        System.out.println();
 
         //  Players gets to choose to hit or stand
         while (true) {
@@ -79,23 +81,24 @@ public class BlackJack extends Game{
         if (playerBusted) {
             user.adjustBalance(-betAmount);
             System.out.println();
-            System.out.println("You busted! DEALER WINS.");
+            System.out.println("------You busted! DEALER WINS------");
             System.out.println();
         } else if (dealerBusted || calculateHandValue(playerHand) > calculateHandValue(dealerHand)) {
             System.out.println();
-            System.out.println("YOU WIN!");
+            System.out.println("------YOU WIN!------");
             System.out.println();
             user.adjustBalance(betAmount);
         } else {
+            System.out.println();
+            System.out.println("------DEALER WINS------");
+            System.out.println();
             user.adjustBalance(-betAmount);
-            System.out.println();
-            System.out.println("DEALER WINS.");
-            System.out.println();
         }
 
         //  Shows final hands of user and dealer
         System.out.println("Your final hand: " + playerHand);
         System.out.println("Dealer's final hand: " + dealerHand);
+        System.out.println();
     }
 
 

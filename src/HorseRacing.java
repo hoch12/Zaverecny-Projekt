@@ -18,7 +18,7 @@ public class HorseRacing extends Game {
     @Override
     public void play(User user, Scanner scanner) {
         System.out.println();
-        System.out.println("WELCOME to Horse Racing!");
+        System.out.println("------WELCOME to Horse Racing!------");
         System.out.println();
         System.out.println("Choose a horse (1-5): ");
         System.out.println();
@@ -39,12 +39,14 @@ public class HorseRacing extends Game {
             // User wins, multiply bet amount by 5 and adjust users balance
             user.adjustBalance(betAmount * 5);
             System.out.println();
-            System.out.println("YOUR HORSE WON!");
+            System.out.println("------YOUR HORSE WON!------");
             System.out.println();
         } else {
             // User loses, subtracts bet amount from users balance
             user.adjustBalance(-betAmount);
-            System.out.println("YOUR HORSE LOST! Winning horse was: " + winningHorse);
+            System.out.println();
+            System.out.println("------YOUR HORSE LOST! Winning horse was: " + winningHorse + "------");
+            System.out.println();
         }
     }
 
